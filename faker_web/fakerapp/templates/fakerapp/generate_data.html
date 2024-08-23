@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Fake Data</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-group .form-check {
+            flex: 1 0 18%;
+            max-width: 18%;
+            margin-right: 10px;
+        }
+        .form-group .form-check label {
+            width: 100%;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .alert {
+            font-size: 1.2rem;
+        }
+        table {
+            margin-top: 30px;
+        }
+        table th {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            font-size: 1rem;
+        }
+        table td {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Generate Fake Data</h1>
+        <form method="POST" class="mt-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="options">Select Fields to Generate</label>
+                <div class="d-flex flex-wrap">
+                    {{ form.options }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="count">Number of Records</label>
+                {{ form.count }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Generate Data</button>
+        </form>
+
+        {% if data %}
+            <div class="alert alert-success mt-5" role="alert">
+                Successfully generated {{ data|length }} records!
+            </div>
+            <h2 class="mt-4">Generated Data</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            {% for key in data.0.keys %}
+                                <th>{{ key|capfirst }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in data %}
+                            <tr>
+                                {% for value in record.values %}
+                                    <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
