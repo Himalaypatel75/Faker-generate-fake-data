@@ -17,7 +17,7 @@ Here's how the application looks:
 ![Main Page](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png)
 
 ### Generated Data
-![Generated Data](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png)
+![Generated Data](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-16.png)
 
 ## Prerequisites
 
