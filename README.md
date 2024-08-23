@@ -14,10 +14,10 @@ This Django project generates fake data based on user-selected fields using the 
 Here's how the application looks:
 
 ### Main Page
-![Main Page](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png/900x500)
+![Main Page](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png)
 
 ### Generated Data
-![Generated Data](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png/900x500)
+![Generated Data](https://github.com/Himalaypatel75/Faker-generate-fake-data/blob/main/Screenshot%20from%202024-08-23%2022-48-09.png)
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ Here's how the application looks:
 
     ```bash
     git clone https://github.com/Himalaypatel75/Faker-generate-fake-data.git
-    cd django-fake-data-generator
+    cd Faker-generate-fake-data
     ```
 
 2. **Create a virtual environment:**
